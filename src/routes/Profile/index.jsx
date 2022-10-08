@@ -62,7 +62,7 @@ export const Profile = () => {
     return (
         <>
             <header className="bg-red-500 text-white">
-                <div className="container max-w-3xl flex justify-between items-center p-4">
+                <div className="container max-w-3xl flex justify-between items-center p-4 pb-8">
                     <img src="/images/logo-fundo-vermelho.svg" alt="" className="w-28 md:w-40" />
                     {auth?.user?.id && (
                         <div onClick={logout} className="cursor-pointer">
@@ -74,9 +74,9 @@ export const Profile = () => {
 
             <main className='space-y-6'>
                 <section id="header" className="bg-red-500 text-white">
-                    <div className="container max-w-3xl space-y-2 p-4 pb-8">
+                    <div className="container max-w-3xl space-y-6 p-4 pb-8">
                         <a href="/dashboard">
-                            <Icon name="back" className="w-6" />
+                            <Icon name="back" className="w-6 display-initial" />
                         </a>
 
                         <h3 className='text-2xl font-bold'> { user?.name }</h3>
