@@ -12,7 +12,7 @@ export const Card = ({ gameId, homeTeam, awayTeam, homeTeamScore, awayTeamScore,
     const [auth] = useLocalStorage('auth')
 
     const onInput = (e) => {
-        console.log(e);
+        console.log(JSON.stringify(e))
         formik.handleChange;
     }
 
