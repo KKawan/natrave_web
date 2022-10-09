@@ -12,7 +12,7 @@ export const Card = ({ gameId, homeTeam, awayTeam, homeTeamScore, awayTeamScore,
     const [auth] = useLocalStorage('auth')
 
     const onInput = (e) => {
-        console.log(e.target.value)
+        e.target.value = e.target.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
         formik.handleChange;
     }
 
