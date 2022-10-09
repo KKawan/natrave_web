@@ -11,11 +11,6 @@ const validationSchema = yup.object().shape({
 export const Card = ({ gameId, homeTeam, awayTeam, homeTeamScore, awayTeamScore, gameTime, disabled}) => {
     const [auth] = useLocalStorage('auth')
 
-    const onInput = (e) => {
-        e.target.value = e.target.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
-        formik.handleChange;
-    }
-
     const formik = useFormik({
         onSubmit: (values) => {
             axios({
@@ -52,7 +47,7 @@ export const Card = ({ gameId, homeTeam, awayTeam, homeTeamScore, awayTeamScore,
                     <input 
                         name="homeTeamScore"
                         value={formik.values.homeTeamScore} 
-                        onChange={onInput} 
+                        onChange={ (e) => { e.target.value = e.target.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1') } } 
                         onBlur={formik.handleSubmit}
                         type="text" 
                         className='bg-red-300/[0.2] w-[55px] h-[55px] text-red-300 text-lg text-center font-bold rounded-full' 
@@ -62,7 +57,7 @@ export const Card = ({ gameId, homeTeam, awayTeam, homeTeamScore, awayTeamScore,
                     <input 
                         name="awayTeamScore"
                         value={formik.values.awayTeamScore} 
-                        onChange={onInput} 
+                        onChange={formik.handleChange;} 
                         onBlur={formik.handleSubmit} 
                         type="text" 
                         className='bg-red-300/[0.2] w-[55px] h-[55px] text-red-300 text-lg text-center font-bold rounded-full' 
