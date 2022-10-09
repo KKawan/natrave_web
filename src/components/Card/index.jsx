@@ -10,6 +10,12 @@ const validationSchema = yup.object().shape({
 
 export const Card = ({ gameId, homeTeam, awayTeam, homeTeamScore, awayTeamScore, gameTime, disabled}) => {
     const [auth] = useLocalStorage('auth')
+
+    const onInput = () => {
+        this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+        formik.handleChange;
+    }
+    
     const formik = useFormik({
         onSubmit: (values) => {
             axios({
@@ -46,22 +52,20 @@ export const Card = ({ gameId, homeTeam, awayTeam, homeTeamScore, awayTeamScore,
                     <input 
                         name="homeTeamScore"
                         value={formik.values.homeTeamScore} 
-                        onChange={formik.handleChange} 
+                        onChange={onInput} 
                         onBlur={formik.handleSubmit}
                         type="text" 
                         className='bg-red-300/[0.2] w-[55px] h-[55px] text-red-300 text-lg text-center font-bold rounded-full' 
-                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                         disabled={disabled}
                     />
                     <span className='text-red-500 font-bold'>X</span>
                     <input 
                         name="awayTeamScore"
                         value={formik.values.awayTeamScore} 
-                        onChange={formik.handleChange} 
+                        onChange={onInput} 
                         onBlur={formik.handleSubmit} 
                         type="text" 
                         className='bg-red-300/[0.2] w-[55px] h-[55px] text-red-300 text-lg text-center font-bold rounded-full' 
-                        onInput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                         disabled={disabled}
                         />
                 </div>            
