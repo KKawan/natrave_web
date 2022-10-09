@@ -57,12 +57,12 @@ export const Card = ({ gameId, homeTeam, awayTeam, homeTeamScore, awayTeamScore,
                     <input 
                         name="awayTeamScore"
                         value={formik.values.awayTeamScore} 
-                        onChange={formik.handleChange;} 
+                        onChange={formik.handleChange} 
                         onBlur={formik.handleSubmit} 
                         type="text" 
                         className='bg-red-300/[0.2] w-[55px] h-[55px] text-red-300 text-lg text-center font-bold rounded-full' 
                         disabled={disabled}
-                        />
+                    />
                 </div>            
 
                 <div className='flex items-center space-x-4'>        
