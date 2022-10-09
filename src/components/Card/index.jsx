@@ -33,36 +33,41 @@ export const Card = ({ gameId, homeTeam, awayTeam, homeTeamScore, awayTeamScore,
     })
     
     return (
-        <div className='rounded-xl border border-gray-300 p-4 text-center space-y-4'>
-            <span className='text-sm md:text-base text-gray-700 font-bold'>{ gameTime }</span>
+        <div className='rounded-xl border-2 border-gray-300 p-4 text-center space-y-4'>
+            <span className='text-sm md:text-base text-gray-500 font-bold'>{ gameTime }</span>
 
-            <form className='flex space-x-4 justify-center items-center'>
-                <span className='uppercase'>{homeTeam}</span>
-                <img src={`/images/flags/${homeTeam}.png`} alt="" />
-                            
-                <input 
-                    name="homeTeamScore"
-                    value={formik.values.homeTeamScore} 
-                    onChange={formik.handleChange} 
-                    onBlur={formik.handleSubmit} 
-                    max={10} 
-                    type="number" 
-                    className='bg-red-300/[0.2] w-[55px] h-[55px] text-red-700 text-xl text-center' 
-                    disabled={disabled}
-                />
-                <span className='text-red-500 font-bold'>X</span>
-                <input 
-                    name="awayTeamScore"
-                    value={formik.values.awayTeamScore} 
-                    onChange={formik.handleChange} 
-                    onBlur={formik.handleSubmit} 
-                    max={10} type="number" 
-                    className='bg-red-300/[0.2] w-[55px] h-[55px] text-red-700 text-xl text-center' 
-                    disabled={disabled}
-                />
-                            
-                <img src={`/images/flags/${awayTeam}.png`} alt="" />
-                <span className='uppercase'>{awayTeam}</span>
+            <form className='flex justify-center items-center space-x-6'>
+                <div className='flex items-center space-x-4'>
+                    <span className='uppercase text-gray-500'>{homeTeam}</span>
+                    <img src={`/images/flags/${homeTeam}.svg`} alt="" />
+                </div>
+
+                <div className='flex items-center space-x-[21px]'>
+                    <input 
+                        name="homeTeamScore"
+                        value={formik.values.homeTeamScore} 
+                        onChange={formik.handleChange} 
+                        onBlur={formik.handleSubmit}
+                        type="text" 
+                        className='bg-red-300/[0.2] w-[55px] h-[55px] text-red-300 text-lg text-center font-bold rounded-full' 
+                        disabled={disabled}
+                    />
+                    <span className='text-red-500 font-bold'>X</span>
+                    <input 
+                        name="awayTeamScore"
+                        value={formik.values.awayTeamScore} 
+                        onChange={formik.handleChange} 
+                        onBlur={formik.handleSubmit} 
+                        type="text" 
+                        className='bg-red-300/[0.2] w-[55px] h-[55px] text-red-300 text-lg text-center font-bold rounded-full' 
+                        disabled={disabled}
+                        />
+                </div>            
+
+                <div className='flex items-center space-x-4'>        
+                    <img src={`/images/flags/${awayTeam}.svg`} alt="" />
+                    <span className='uppercase text-gray-500'>{awayTeam}</span>
+                </div>
             </form>
         </div>
     )
