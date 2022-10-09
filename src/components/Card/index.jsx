@@ -11,8 +11,8 @@ const validationSchema = yup.object().shape({
 export const Card = ({ gameId, homeTeam, awayTeam, homeTeamScore, awayTeamScore, gameTime, disabled}) => {
     const [auth] = useLocalStorage('auth')
 
-    const onInput = () => {
-        value = value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+    const onInput = (e) => {
+        console.log(e);
         formik.handleChange;
     }
 
