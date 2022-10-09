@@ -47,9 +47,9 @@ export const Card = ({ gameId, homeTeam, awayTeam, homeTeamScore, awayTeamScore,
                     <input 
                         name="homeTeamScore"
                         value={formik.values.homeTeamScore} 
-                        onChange={ (e) => { e.target.value = e.target.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1') } } 
+                        onChange={formik.handleChange} 
                         onBlur={formik.handleSubmit}
-                        type="text" 
+                        type="number" 
                         className='bg-red-300/[0.2] w-[55px] h-[55px] text-red-300 text-lg text-center font-bold rounded-full' 
                         disabled={disabled}
                     />
@@ -59,7 +59,7 @@ export const Card = ({ gameId, homeTeam, awayTeam, homeTeamScore, awayTeamScore,
                         value={formik.values.awayTeamScore} 
                         onChange={formik.handleChange} 
                         onBlur={formik.handleSubmit} 
-                        type="text" 
+                        type="number" 
                         className='bg-red-300/[0.2] w-[55px] h-[55px] text-red-300 text-lg text-center font-bold rounded-full' 
                         disabled={disabled}
                     />
