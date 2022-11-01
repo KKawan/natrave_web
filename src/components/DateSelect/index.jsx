@@ -15,7 +15,7 @@ export const DateSelect = ({ currentDate, onChange }) => {
 
     return (
         <div className='p-4 flex space-x-4 justify-center items-center'>
-            <span>{currentDate}</span>
+            <span>{formatISO(currentDate)}</span>
             {new Date(2022, 10, 20) != currentDate && (
                 <Icon name="arrowLeft" className="w-6 text-red-500 md:hover:cursor-pointer" onClick={prevDay} />
             )}
