@@ -19,7 +19,7 @@ const validationSchema = yup.object().shape({
 })
 
 export const Signup = () => {
-    const [auth] = useLocalStorage('auth', {});
+    const [auth, setAuth] = useLocalStorage('auth', {});
     
     const formik = useFormik({
         onSubmit: async (values) => {
@@ -30,7 +30,7 @@ export const Signup = () => {
                 data: values
             })
 
-            window.localStorage.setItem('auth', JSON.stringify(res.data))
+            setAuth(res.data)
         },
         initialValues: {
             name: '',
