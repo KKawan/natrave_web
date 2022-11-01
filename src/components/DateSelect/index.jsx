@@ -19,7 +19,9 @@ export const DateSelect = ({ currentDate, onChange }) => {
                 <Icon name="arrowLeft" className="w-6 text-red-500 md:hover:cursor-pointer" onClick={prevDay} />
             )}
             <span className='font-bold'>{format(new Date(currentDate), "d 'de' MMMM", { locale: ptBR })}</span>
-            <Icon name="arrowRight" className="w-6 text-red-500 md:hover:cursor-pointer" onClick={nextDay} />
+            {formatISO(new Date(2022, 11, 2)) != currentDate && (
+                <Icon name="arrowRight" className="w-6 text-red-500 md:hover:cursor-pointer" onClick={nextDay} />
+            )}
         </div>
     )
 }
